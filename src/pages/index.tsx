@@ -8,6 +8,7 @@ import ecography from "../assets/Ecografía.JPG";
 import xRay from "../assets/Radiografía.JPG";
 import laparoscopy from "../assets/Laparoscopia.JPG";
 import laboratory from "../assets/Laboratorio.JPG";
+import prophylaxis from "../assets/POST PROFILAXIS.jpg";
 
 const trustPoints = [
     {icon: Stethoscope, label: "Atención veterinaria", detail: "Integral y cercana"},
@@ -145,7 +146,47 @@ export default function Index() {
                 </div>
             </section>
 
-            
+            <section className="overflow-hidden bg-brand-navy">
+                <div className="mx-auto grid max-w-360 items-center gap-8 px-5 py-16 sm:px-8 md:grid-cols-[1fr_0.76fr] lg:px-12 lg:py-20">
+                    <motion.div initial="hidden" whileInView="visible" viewport={{once: true}} variants={reveal}>
+                        <p className="eyebrow text-brand-orange">Educación que previene</p>
+                        <h2 className="section-title mt-3 max-w-155 text-white">Una sonrisa saludable tambien es 
+                            <span className="text-brand-orange"> bienestar. </span>
+                        </h2>
+                        <p className="mt-5 max-w-137.5 leading-7 text-white/60">El cuidado preventivo hace parte de una vida más tranquila. Conoce nuestro contenido sobre salud oral y descubre por qué detectar a tiempo puede hacer la diferencia.</p>
+                        <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+                            <Link to="/blog/profilaxis-dental" className="button-primary">
+                                Leer sobre profilaxis
+                                <ArrowRight size={17}/>
+                            </Link>
+                            <Link to="/blog" className="button-ghost">
+                                Explorar blog
+                                <ArrowRight size={17}/>
+                            </Link>
+                        </div>
+                    </motion.div>
+                    
+                    <motion.div initial={{opacity: 0, x: 24}} whileInView={{opacity: 1, x: 0}} viewport={{once: true}} transition={{duration: 0.7}} className="relative mx-auto w-full max-w-97.5">
+                        <div className="absolute -inset-3 rounded-[28px] border border-brand-orange/20"/>
+                        <img src={prophylaxis} alt="Material educativo de profilaxis dental veterinaria" loading="lazy" className="relative aspect-[0.8] w-full rounded-[22px] object-cover shadow-2xl" />
+                    </motion.div>
+                </div>
+            </section>
+
+            <section className="bg-white">
+                <div className="mx-auto flex max-w-360 flex-col items-center gap-6 px-5 py-14 text-center sm:px-8 md:flex-row md:justify-between md:text-left lg:px-12 lg:py-16">
+                    <div>
+                        <p className="eyebrow">Estamos para ayudarte</p>
+                        <h2 className="mt-2 text-3xl font-extrabold tracking-[-0.04em] text-brand-navy sm:text-4xl">
+                            Hablemos del bienestar <br className="hidden sm:block"/> de tu mascota.
+                        </h2>
+                    </div>
+                    <Link to="/agendar-cita" className="button-primary group">
+                    Solicitar una cita
+                    <ArrowUpRight size={17} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"/>
+                    </Link>
+                </div>
+            </section>
         </div>
     );
 }
