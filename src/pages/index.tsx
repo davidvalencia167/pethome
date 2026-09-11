@@ -27,7 +27,7 @@ const reveal = {hidden: {opacity: 0, y: 22}, visible: {opacity: 1, y: 0, transit
 export default function Index() {
     return(
         <div>
-            <section className="relative oveflow-hidden bg-brand-cream">
+            <section className="relative overflow-hidden bg-brand-cream">
                 <div className="absolute -right-24 -top-28 h-72 w-72 rounded-full bg-brand-orange/10"/>
                 <div className="relative mx-auto grid max-w-360 items-center gap-12 px-5 py-12 sm:px-8 md:min-h-147.5 lg:grid-cols-[0.98fr_1.02fr] lg:gap-20 lg:px-12 lg:py-16">
                     <motion.div initial="hidden" animate="visible" variants={reveal} className="relative z-10 max-w-155">
@@ -144,6 +144,8 @@ export default function Index() {
                     </div>
                 </div>
             </section>
+
+            
         </div>
     );
 }
