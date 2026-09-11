@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap");
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-brand-navy: #003f5c;
+  --color-brand-orange: #f58216;
+  --color-brand-cream: #fff4e6;
+  --color-brand-surface: #fffdf9;
+  --font-sans: 'DM Sans', sans-serif;
+  --font-display: 'Manrope', sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 40 33% 99%;
+    --foreground: 199 58% 14%;
+    --card: 0 0% 100%;
+    --card-foreground: 199 58% 14%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 199 58% 14%;
+    --primary: 199 100% 18%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 34 100% 96%;
+    --secondary-foreground: 199 100% 18%;
+    --muted: 38 25% 95%;
+    --muted-foreground: 199 20% 42%;
+    --accent: 29 99% 47%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 199 25% 88%;
+    --input: 199 25% 88%;
+    --ring: 29 99% 47%;
+    --radius: 0.85rem;
+    --sidebar-background: 40 33% 99%;
+    --sidebar-foreground: 199 58% 14%;
+    --sidebar-primary: 199 100% 18%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 34 100% 96%;
+    --sidebar-accent-foreground: 199 100% 18%;
+    --sidebar-border: 199 25% 88%;
+    --sidebar-ring: 29 99% 47%;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { @apply bg-brand-surface font-sans text-brand-navy antialiased; }
+  * { @apply border-border; }
+  ::selection { background: #e97701; color: #ffffff; }
+  :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) { overflow-wrap: anywhere; word-break: normal; }
+  a, button { -webkit-tap-highlight-color: transparent; }
+}
+
+@layer components {
+  .button-primary { @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-brand-orange px-6 text-sm font-bold text-white shadow-lg shadow-brand-orange/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#d96900] hover:shadow-xl hover:shadow-brand-orange/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2; }
+  .button-secondary { @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-brand-navy px-6 text-sm font-bold text-white shadow-lg shadow-brand-navy/15 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#002f47] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2; }
+  .button-ghost { @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/30 px-6 text-sm font-bold text-white transition-all duration-300 hover:border-brand-orange hover:bg-brand-orange/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2; }
+  .eyebrow { @apply text-xs font-extrabold uppercase tracking-[0.17em] text-brand-orange; }
+  .section-title { @apply font-display text-4xl font-extrabold leading-[1.03] tracking-[-0.055em] text-brand-navy sm:text-5xl; }
+  .link-arrow { @apply inline-flex items-center gap-2 text-sm font-extrabold text-brand-navy transition-colors hover:text-brand-orange; }
+  .social-link { @apply inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors hover:border-brand-orange hover:bg-brand-orange hover:text-white; }
+  .footer-heading { @apply text-xs font-extrabold uppercase tracking-[0.16em] text-brand-orange; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
