@@ -6,9 +6,10 @@ import { Toaster as Sonner } from "./components/ui/toaster";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { CartProvider } from "./components/site/CartContext";
 import SiteLayout from "./components/site/SiteLayout";
-import Index from "./pages";
-
+import Index from "./pages/Index";
 import "../src/styles/global.css"
+import { About } from "./pages/ContentPages";
+
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,10 @@ function App() {
                   <Routes>
                       <Route element={<SiteLayout/>}>
                       <Route path="/" element={<Index/>}/>
+                      
+                      
+                      <Route path="/nosotros" element={<About/>}/>
+
                       </Route>
                   </Routes>
               </CartProvider>
