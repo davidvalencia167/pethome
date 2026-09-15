@@ -1,6 +1,7 @@
 import {motion} from "framer-motion"
 import clinic from "../assets/IMG_3001.jpg";
-import { Check, HeartPlus, Microscope, ShieldCheck } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, HeartPlus, Microscope, ShieldCheck } from "lucide-react";
+import { Link } from "react-router-dom";
 import catCare from "../assets/IMG_3008.jpg";
 import PostCare from "../assets/post - cuidado.jpg";
 
@@ -66,8 +67,31 @@ export function About() {
                     <motion.div initial="hidden" whileInView="visible" viewport={{once: true, amount: 0.2}} variants={reveal} className="relative">
                         <img src={PostCare} alt="Atención veterinaria cercana para una mascota" loading="lazy" className="mx-auto h-auto w-full max-w-100 rounded-[22px] object-contain object-center shadow-xl" />
                     </motion.div>
-                    <motion.div>
-                        
+                    <motion.div initial="hidden" whileInView="visible" viewport={{once: true, amount: 0.2}} variants={reveal}>
+                        <p className="eyebrow">Cómo te acompañamos</p>
+                        <h2 className="section-title mt-3">Un cuidado claro para cada <span className="text-brand-orange">etapa.</span></h2>
+                        <p className="mt-5 max-w-140 leading-7 text-brand-navy/60">Queremos que tú y tu mascota se sientan acompañados desde el primer momento. Nuestra atención parte de escuchar, orientar y cuidar con cercanía.</p>
+                        <div className="mt-8 grid gap-3">
+                            {[{number: "01", title: "Escuchamos tu historia", text: "Conocemos a tu mascota y la preocupación de su familia."}, {number: "02", title: "Orientamos el camino", text: "Te explicamos las opciones de atención de forma clara."}, {number: "03", title: "Cuidamos con propósito", text: "Acompañamos cada paso con atención integral y humana."}].map(({number, title, text}) => 
+                                <div key={number} className="flex gap-4 rounded-2xl border border-brand-navy/10 bg-white p-4">
+                                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-brand-orange text-xs font-extrabold text-white">{number}</span>
+                                    <div>
+                                        <h3 className="text-sm font-extrabold text-brand-navy">{title}</h3>
+                                        <p className="mt-1 text-sm leading-6 text-brand-navy/55">{text}</p>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                           <Link to="/servicios" className="button-secondary">
+                                Ver servicios
+                                <ArrowRight size={16}/>
+                           </Link>
+                           <Link to="/agendar-cita" className="link-arrow">
+                                Agendar una valoración
+                                <ArrowUpRight size={16}/>
+                           </Link>
+                        </div>
                     </motion.div>
                 </div>
             </section>
