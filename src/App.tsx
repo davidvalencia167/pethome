@@ -10,6 +10,7 @@ import SiteLayout from "./components/site/SiteLayout";
 import "../src/styles/global.css"
 import { About } from "./pages/ContentPages";
 import Index from "./pages/Index";
+import Services from "./pages/Services";
 
 
 const queryClient = new QueryClient();
@@ -26,9 +27,8 @@ function App() {
                   <Routes>
                       <Route element={<SiteLayout/>}>
                       <Route path="/" element={<Index/>}/>
-                      
-                      
                       <Route path="/nosotros" element={<About/>}/>
+                      <Route path="/servicios" element={<Services/>}/>
 
                       </Route>
                   </Routes>

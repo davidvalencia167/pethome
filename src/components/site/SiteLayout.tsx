@@ -5,6 +5,7 @@ import { Link as RouterLink, NavLink, Outlet } from "react-router-dom";
 import { useState } from "react";
 import { useCart } from "./CartContext";
 import { AnimatePresence, motion } from "framer-motion";
+import { siteInfo } from "../../data/site";
 
 const navigation = [
     {label: "Inicio", to: "/"},
@@ -15,6 +16,8 @@ const navigation = [
     {label: "Blog", to: "/blog"},
     {label: "Contacto", to: "/contacto"},
 ];
+
+const whatsappUrl = `https://wa.me/${siteInfo.whatsappNumber}`;
 
 export function SiteHeader() {
     
@@ -96,8 +99,13 @@ export function SiteFooter() {
                         Cuidamos cada etapa de la vida de tu mascota con atención cercana, tecnología y un equipo
                         que entiende lo importante que es para ti.
                     </p>
-                    <a href="https://www.instagram.com/pethome_veterinaria/" target="_blank" rel="noreferrer" className="mt-7 inline-flex text-xs font-semibold text-white/65 transition-colors hover:text-brand-orange">
-                        Instagram: @pethome_veterinaria
+                    <a href="https://www.instagram.com/pethome_veterinaria/" target="_blank" rel="noreferrer" aria-label="Instagram de PetHome: @pethome_veterinaria" title="Instagram: @pethome_veterinaria" className="mt-7 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-white/80 transition-colors hover:bg-brand-orange hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 focus-visible:ring-offset-brand-navy">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 fill-none stroke-current" strokeWidth="1.8">
+                            <rect x="3.5" y="3.5" width="17" height="17" rx="4" />
+                            <circle cx="12" cy="12" r="4" />
+                            <circle cx="17.5" cy="6.5" r="1" className="fill-current stroke-none" />
+                        </svg>
+                        <span className="sr-only">@pethome_veterinaria</span>
                     </a>
                 </div>
                 <div>
@@ -146,6 +154,12 @@ export default function SiteLayout() {
             <SiteHeader/>
             <main><Outlet/></main>
             <SiteFooter/>
+            <a href={whatsappUrl} target="_blank" rel="noreferrer" aria-label="Escribir a PetHome por WhatsApp" className="fixed bottom-5 right-5 z-60 inline-flex h-14 items-center gap-2 rounded-full bg-[#25D366] px-4 text-sm font-extrabold text-white shadow-xl shadow-[#25D366]/25 transition-transform hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 sm:bottom-6 sm:right-6">
+                <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6 fill-current">
+                    <path d="M12 2.25a9.72 9.72 0 0 0-8.42 14.58L2.25 21.75l5.1-1.3A9.72 9.72 0 1 0 12 2.25Zm0 17.7a7.96 7.96 0 0 1-4.06-1.1l-.29-.17-3.03.77.8-2.95-.19-.3A7.96 7.96 0 1 1 12 19.95Zm4.37-5.95c-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.95-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.51.58.18 1.1.15 1.51.09.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z" />
+                </svg>
+                <span className="hidden sm:inline">WhatsApp</span>
+            </a>
         </div>
     )
 }
