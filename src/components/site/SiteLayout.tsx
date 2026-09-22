@@ -1,7 +1,7 @@
 import { ArrowUpRight, Clock3, MapPin, Menu, Phone, ShoppingBag, X } from "lucide-react";
 
 import logo from "../../assets/Logo PetHome.png";
-import { Link as RouterLink, NavLink, Outlet } from "react-router-dom";
+import { Link ,NavLink, Outlet} from "react-router-dom";
 import { useState } from "react";
 import { useCart } from "./CartContext";
 import { AnimatePresence, motion } from "framer-motion";
@@ -20,16 +20,16 @@ const navigation = [
 const whatsappUrl = `https://wa.me/${siteInfo.whatsappNumber}`;
 
 export function SiteHeader() {
-    
+
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const {count, openCart} = useCart();
 
     return(
         <header className="sticky top-0 z-50 border-b border-brand-navy/10 bg-white/95 backdrop-blur-xl">
             <div className="mx-auto flex h-16 max-w-360 items-center justify-between px-5 sm:px-8 lg:px-12">
-                <RouterLink to="/" className="flex items-center gap-3" aria-label="PetHome Inicio">
+                <Link to="/" className="flex items-center gap-3" aria-label="PetHome Inicio">
                     <img src={logo} alt="PetHome Clínica Veterinaria" className="h-12 w-auto object-contain" />
-                </RouterLink>
+                </Link>
 
                 <nav className="hidden items-center gap-4 xl:flex 2xl:gap-5" aria-label="Navegación Principal">
                     {
@@ -50,9 +50,9 @@ export function SiteHeader() {
                         <ShoppingBag size={18} strokeWidth={1.8}/>
                         <span className="absolute -right-1 -top-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-brand-orange px-1 text-[9px] font-extrabold text-white">{count}</span>
                     </button>
-                    <RouterLink to="/agendar-cita" className="button-primary group px-5 text-[13px]">
+                    <Link to="/agendar-cita" className="button-primary group px-5 text-[13px]">
                         Agendar cita <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group:hover:-translate-y-0.5"/>
-                    </RouterLink>
+                    </Link>
                 </div>
 
                 <div className="flex items-center gap-2 xl:hidden">
@@ -77,11 +77,11 @@ export function SiteHeader() {
                                             {item.label}
                                         </NavLink>
                                     ))}
-                                    <RouterLink to="/agendar-cita" onClick={() => setIsMenuOpen(false)} className="button-primary mt-2 justify-center">
+                                    <Link to="/agendar-cita" onClick={() => setIsMenuOpen(false)} className="button-primary mt-2 justify-center">
                                         Agendar cita <ArrowUpRight size={16}/>
-                                    </RouterLink>
+                                    </Link>
                             </div>
-                       </motion.nav> 
+                       </motion.nav>
                     )
                 }
             </AnimatePresence>
@@ -111,11 +111,11 @@ export function SiteFooter() {
                 <div>
                     <p className="footer-heading">Navegación</p>
                     <div className="mt-5 flex flex-col gap-3 text-sm text-white/65">
-                        <RouterLink to="/nosotros" className="transition-colors hover:text-brand-orange">Nosotros</RouterLink>
-                        <RouterLink to="/servicios" className="transition-colors hover:text-brand-orange">Servicios</RouterLink>
-                        <RouterLink to="/tienda" className="transition-colors hover:text-brand-orange">Tienda PetHome</RouterLink>
-                        <RouterLink to="/blog" className="transition-colors hover:text-brand-orange">Blog</RouterLink>
-                        <RouterLink to="/contacto" className="transition-colors hover:text-brand-orange">Contacto</RouterLink>
+                        <Link to="/nosotros" className="transition-colors hover:text-brand-orange">Nosotros</Link>
+                        <Link to="/servicios" className="transition-colors hover:text-brand-orange">Servicios</Link>
+                        <Link to="/tienda" className="transition-colors hover:text-brand-orange">Tienda PetHome</Link>
+                        <Link to="/blog" className="transition-colors hover:text-brand-orange">Blog</Link>
+                        <Link to="/contacto" className="transition-colors hover:text-brand-orange">Contacto</Link>
                     </div>
                 </div>
                 <div>

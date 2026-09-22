@@ -11,6 +11,8 @@ import "../src/styles/global.css"
 import { About } from "./pages/ContentPages";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
+import ServiceDetail from "./pages/ServiceDetail";
+import Appointment from "./pages/Appointment";
 
 
 const queryClient = new QueryClient();
@@ -29,7 +31,10 @@ function App() {
                       <Route path="/" element={<Index/>}/>
                       <Route path="/nosotros" element={<About/>}/>
                       <Route path="/servicios" element={<Services/>}/>
+                      <Route path="/servicios/:slug" element={<ServiceDetail/>}/>
 
+
+                      <Route path="/agendar-cita" element={<Appointment/>}/>
                       </Route>
                   </Routes>
               </CartProvider>
