@@ -99,14 +99,22 @@ export function SiteFooter() {
                         Cuidamos cada etapa de la vida de tu mascota con atención cercana, tecnología y un equipo
                         que entiende lo importante que es para ti.
                     </p>
-                    <a href="https://www.instagram.com/pethome_veterinaria/" target="_blank" rel="noreferrer" aria-label="Instagram de PetHome: @pethome_veterinaria" title="Instagram: @pethome_veterinaria" className="mt-7 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-white/80 transition-colors hover:bg-brand-orange hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 focus-visible:ring-offset-brand-navy">
-                        <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 fill-none stroke-current" strokeWidth="1.8">
-                            <rect x="3.5" y="3.5" width="17" height="17" rx="4" />
-                            <circle cx="12" cy="12" r="4" />
-                            <circle cx="17.5" cy="6.5" r="1" className="fill-current stroke-none" />
-                        </svg>
-                        <span className="sr-only">@pethome_veterinaria</span>
-                    </a>
+                    <div className="mt-7 flex items-center gap-3">
+                        <a href="https://www.instagram.com/pethome_veterinaria/" target="_blank" rel="noreferrer" aria-label="Instagram de PetHome: @pethome_veterinaria" title="Instagram: @pethome_veterinaria" className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-white/80 transition-colors hover:bg-brand-orange hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 focus-visible:ring-offset-brand-navy">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 fill-none stroke-current" strokeWidth="1.8">
+                                <rect x="3.5" y="3.5" width="17" height="17" rx="4" />
+                                <circle cx="12" cy="12" r="4" />
+                                <circle cx="17.5" cy="6.5" r="1" className="fill-current stroke-none" />
+                            </svg>
+                            <span className="sr-only">@pethome_veterinaria</span>
+                        </a>
+                        <a href="https://www.facebook.com/Pethomecucuta" target="_blank" rel="noreferrer" aria-label="Facebook de PetHome" title="Facebook de PetHome" className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-white/80 transition-colors hover:bg-brand-orange hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 focus-visible:ring-offset-brand-navy">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 fill-current">
+                                <path d="M13.55 21v-8.35h2.8l.42-3.24h-3.22V7.12c0-.94.26-1.58 1.6-1.58h1.71V2.5c-.3-.04-1.32-.13-2.51-.13-2.48 0-4.18 1.51-4.18 4.29v2.4H7.2v3.24h2.8V21h3.55Z"/>
+                            </svg>
+                            <span className="sr-only">PetHome en Facebook</span>
+                        </a>
+                    </div>
                 </div>
                 <div>
                     <p className="footer-heading">Navegación</p>

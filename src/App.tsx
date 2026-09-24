@@ -8,7 +8,7 @@ import { CartProvider } from "./components/site/CartContext";
 import SiteLayout from "./components/site/SiteLayout";
 
 import "../src/styles/global.css"
-import { About } from "./pages/ContentPages";
+import { About, Article, Blog, Testimonials } from "./pages/ContentPages";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
 import ServiceDetail from "./pages/ServiceDetail";
@@ -35,6 +35,11 @@ function App() {
 
 
                       <Route path="/agendar-cita" element={<Appointment/>}/>
+                      <Route path="/blog" element={<Blog/>}/>
+                      <Route path="/blog/:slug" element={<Article/>}/>
+
+
+                      <Route path="/testimonios" element={<Testimonials/>}/>
                       </Route>
                   </Routes>
               </CartProvider>
