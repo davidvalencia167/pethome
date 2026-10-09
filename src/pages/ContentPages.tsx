@@ -55,7 +55,7 @@ export function About() {
                     </div>
                 </div>
             </section>
-
+            
             <section className="bg-brand-navy">
                 <div className="mx-auto max-w-300 px-5 py-16 sm:px-8 lg:py-20">
                     <p className="eyebrow"> En PetHome</p>
@@ -271,4 +271,27 @@ export function Testimonials() {
             </section>
         </div>
     );
+}
+
+
+export function Contact() {
+    return(
+        <div>
+            <section className="bg-brand-cream">
+                <div className="mx-auto max-w-300 px-5 py-16 sm:px-8 lg:py-20">
+                    <p className="eyebrow">Estamos aquí</p>
+                    <h1 className="mt-4 max-w-2xl font-display text-5xl font-extrabold tracking-[-0.06em] text-brand-navy sm:text-6xl">Visitanos en <span className="text-brand-orange">Cúcuta</span></h1>
+                    <p className="mt-5 max-w-lg leading-7 text-brand-navy/60">
+                        Encuentra PetHome Clínica Veterinaria en el barrio Lleras Restrepo.
+                    </p>
+                </div>
+            </section>
+
+            <section className="mx-auto grid max-w-300 gap-8 px-5 py-12 sm:px-8 md:grid-cols-[0.8fr_1.2fr] lg:py-16">
+                <div className="rounded-3xl bg-brand-navy p-7 text-white">
+                    
+                </div>
+            </section>
+        </div>
+    )
 }

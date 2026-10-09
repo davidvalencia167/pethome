@@ -8,11 +8,13 @@ import { CartProvider } from "./components/site/CartContext";
 import SiteLayout from "./components/site/SiteLayout";
 
 import "../src/styles/global.css"
-import { About, Article, Blog, Testimonials } from "./pages/ContentPages";
+import { About, Article, Blog, Contact, Testimonials } from "./pages/ContentPages";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
 import ServiceDetail from "./pages/ServiceDetail";
 import Appointment from "./pages/Appointment";
+import Store from "./pages/Store";
+import { ProductDetail } from "./pages/CommercePages";
 
 
 const queryClient = new QueryClient();
@@ -32,14 +34,17 @@ function App() {
                       <Route path="/nosotros" element={<About/>}/>
                       <Route path="/servicios" element={<Services/>}/>
                       <Route path="/servicios/:slug" element={<ServiceDetail/>}/>
+,
 
-
+                      <Route path="/tienda" element={<Store/>}/>
+                      <Route path="/tienda/producto/:id" element={<ProductDetail/>}/>
                       <Route path="/agendar-cita" element={<Appointment/>}/>
                       <Route path="/blog" element={<Blog/>}/>
                       <Route path="/blog/:slug" element={<Article/>}/>
 
 
                       <Route path="/testimonios" element={<Testimonials/>}/>
+                      <Route path="/contacto" element={<Contact/>}/>
                       </Route>
                   </Routes>
               </CartProvider>

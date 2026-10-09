@@ -70,7 +70,7 @@ export default function Services() {
                         </p>
                     </motion.div>
 
-                    <motion.div initial={{opacity: 0, scale: 0.96}} animate={{opacity: 1, scale: 1}} transition={{duration: 0.7}} className="relative hidden aspect-[1.15] overflow-hidden rounded-4xl rounded-bl-[100px] bg-brand-navy md:block">
+                    <motion.div initial={{opacity: 0, scale: 0.96}} animate={{opacity: 1, scale: 1}} transition={{duration: 0.7}} className="relative block aspect-[1.15] overflow-hidden rounded-4xl rounded-bl-[100px] bg-brand-navy">
                             <img src={dogImage} alt="Paciente de PetHome" className="h-full w-full object-cover object-top opacity-85"/>
                             <div className="absolute inset-0 bg-linear-to-t from-brand-navy/70 to-transparent"/>
                             <div className="absolute bottom-6 left-7 flex items-center gap-3 text-white">
