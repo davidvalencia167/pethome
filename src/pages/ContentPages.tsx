@@ -1,6 +1,6 @@
 import {motion} from "framer-motion"
 import clinic from "../assets/IMG_3001.jpg";
-import { ArrowRight, ArrowUpRight, Check, ChevronLeft, ChevronRight, HeartPlus, Microscope, ShieldCheck, Star } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, ChevronLeft, ChevronRight, HeartPlus, HeartPulse, MapPin, Microscope, ShieldCheck, Star, Stethoscope } from "lucide-react";
 
 import catCare from "../assets/IMG_3008.jpg";
 import PostCare from "../assets/post - cuidado.jpg";
@@ -13,6 +13,7 @@ import renal from "../assets/PROBLEMAS RENALES - 1.jpg";
 import moquillo from "../assets/MOQUILLO.JPEG";
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { siteInfo } from "../data/site";
 
 const reveal = {hidden: {opacity: 0, y: 18}, visible: {opacity: 1, y: 0, transition: {duration: 0.55, ease: "easeOut" as const}}};
 
@@ -289,9 +290,32 @@ export function Contact() {
 
             <section className="mx-auto grid max-w-300 gap-8 px-5 py-12 sm:px-8 md:grid-cols-[0.8fr_1.2fr] lg:py-16">
                 <div className="rounded-3xl bg-brand-navy p-7 text-white">
-                    
+                    <MapPin className="text-brand-orange" size={27}/>
+                    <h2 className="mt-6 text-xl font-extrabold">
+                        PetHome Clínica Veterinaria
+                    </h2>
+                    <p className="mt-4 text-sm leading-7 text-white/65">
+                        {siteInfo.address}
+                    </p>
+                    <div className="mt-7 space-y-4 border-t border-white/10 pt-6 text-sm text-white/60">
+                        <p className="flex gap-3">
+                            <Stethoscope size={17} className="text-brand-orange"/>
+                            Teléfono: {siteInfo.phone}
+                        </p>
+                        <p className="flex gap-3">
+                            <HeartPulse size={17} className="text-brand-orange"/>
+                            Horarios: {siteInfo.hours}
+                        </p>
+                    </div>
+                    <Link to="/agendar-cita" className="button-primary mt-8 w-full">
+                        Agendar una cita
+                        <ArrowUpRight size={16}/>
+                    </Link>
+                </div>
+                <div className="min-h-90 overflow-hidden rounded-3xl border border-brand-navy/10">
+                    <iframe title="Ubicación PetHome Clínica Veterinaria" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7512.860372278082!2d-72.5004048!3d7.898162500000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e6645d0267d5727%3A0xae5fb1042855dd10!2sPet%20Home%20Cl%C3%ADnica%20Veterinaria!5e1!3m2!1ses-419!2sco!4v1792105383178!5m2!1ses-419!2sco" className="h-full min-h-90 w-full border-0"   loading="lazy" referrerPolicy="strict-origin-when-cross-origin"></iframe>
                 </div>
             </section>
         </div>
-    )
+    );
 }
