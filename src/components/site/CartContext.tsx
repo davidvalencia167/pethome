@@ -35,16 +35,18 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const value = useMemo<CartContextValue>(() => ({
     items, count, subtotal, isOpen,
     addItem(product, quantity = 1) {
+      if(product.stock === 0) return;
+      const maxQuantity = product.stock ?? Number.MAX_SAFE_INTEGER;
       setItems((current) => {
-        const exists = current.find((item) => item.product.id === product.id);
-        if (exists) return current.map((item) => item.product.id === product.id ? { ...item, quantity: Math.min(item.quantity + quantity, product.stock) } : item);
-        return [...current, { product, quantity: Math.min(quantity, product.stock) }];
+       const exists = current.find((item) => item.product.id === product.id);
+        if (exists) return current.map((item) => item.product.id === product.id ? { ...item, quantity: Math.min(item.quantity + quantity, maxQuantity) } : item);
+        return [...current, { product, quantity: Math.min(quantity, maxQuantity) }];
       });
       toast.success("Producto agregado al carrito", { description: product.name });
       setIsOpen(true);
     },
     removeItem(id) { setItems((current) => current.filter((item) => item.product.id !== id)); },
-    updateQuantity(id, quantity) { setItems((current) => current.map((item) => item.product.id === id ? { ...item, quantity: Math.max(1, Math.min(quantity, item.product.stock)) } : item)); },
+    updateQuantity(id, quantity) { setItems((current) => current.map((item) => item.product.id === id ? { ...item, quantity: Math.max(1, Math.min(quantity, item.product.stock ?? Number.MAX_SAFE_INTEGER)) } : item)); },
     clearCart() { setItems([]); },
     openCart() { setIsOpen(true); },
     closeCart() { setIsOpen(false); },
