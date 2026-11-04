@@ -6,6 +6,7 @@ import { ArrowUpRight, ShoppingBag } from "lucide-react";
 
 export default function ProductCard({product} : {product: Product}) {
     const {addItem} = useCart();
+    const availability = product.stock === undefined ? "Consultar disponibilidad" : product.stock > 0 ? `${product.stock} disponibles` : "Agotado";
     return(
         <article className="group overflow-hidden rounded-[22px] border border-brand-navy/10 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-brand-orange/35 hover:shadow-xl hover:shadow-brand-navy/10">
             <Link to={`/tienda/producto/${product.id}`} className="relative block h-60 overflow-hidden bg-brand-cream">
@@ -22,7 +23,7 @@ export default function ProductCard({product} : {product: Product}) {
                     <div>
                         <strong className="text-lg font-extrabold text-brand-navy">{formatCOP(product.price)}</strong>
                         {product.compareAtPrice && <span className="ml-2 text-xs text-brand-navy/35 line-through">{formatCOP(product.compareAtPrice)}</span>}
-                        <p className="mt-1 text-[11px] font-semibold text-emerald-600">{product.stock > 0 ? `${product.stock} disponibles` : "Agotado"}</p>
+                        <p className={`mt-1 text-[11px] font-semibold ${product.stock === undefined ? "text-brand-orange" : product.stock > 0 ? "text-emerald-600" : "text-brand-navy/40"}`}>{availability}</p>
                     </div>
                     <button type="button" disabled={product.stock === 0} onClick={() => addItem(product)} aria-label={`Agregar ${product.name} al carrito`} className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-cream text-brand-orange transition-colors hover:bg-brand-orange hover:text-white disabled:cursor-not-allowed disabled:opacity-40">
                         <ShoppingBag size={17}/>
