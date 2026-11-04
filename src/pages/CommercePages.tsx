@@ -50,7 +50,7 @@ export function ProductDetail() {
                                 <Minus size={15}/>
                             </button>
                             <span className="w-8 text-center text-sm font-bold">{quantity}</span>
-                            <button type="button" onClick={() => setQuantity((value) => Math.min(product.stock, value +1))} className="px-4 text-brand-navy/60 hover:text-brand-orange" aria-label="Aumentar cantidad">
+                            <button type="button" onClick={() => setQuantity((value) => Math.min(product.stock ?? Number.MAX_SAFE_INTEGER, value +1))} className="px-4 text-brand-navy/60 hover:text-brand-orange" aria-label="Aumentar cantidad">
                                 <Plus size={15}/>
                             </button>
                         </div>
