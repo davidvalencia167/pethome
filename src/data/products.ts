@@ -2322,7 +2322,6 @@ const productImages: Record<string, string> = {
     "112570": alernex,
     "112382": animoImpulsor,
     "112340": animoImpulsorTabletas,
-    
 }
 
 
